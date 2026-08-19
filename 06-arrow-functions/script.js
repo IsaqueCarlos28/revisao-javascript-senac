@@ -5,28 +5,30 @@
 // TODO:
 // Reescreva as funções abaixo utilizando arrow functions.
 
-function somar(a, b) {
-  return a + b;
-}
-
-function subtrair(a, b) {
-  return a - b;
-}
-
-function multiplicar(a, b) {
-  return a * b;
-}
-
-function dividir(a, b) {
-  if (b === 0) {
+const somar = (a, b) =>  a + b;
+const subtrair = (a, b) =>  a - b;
+const multiplicar = (a, b) =>  a * b;
+const dividir = (a, b) => {
+  if (a === 0 || b === 0) {
     return "Não é possível dividir por zero";
   }
-
   return a / b;
 }
 
 // TODO:
 // Identifique quais funções podem utilizar retorno implícito.
 
-// TODO:
-// Crie uma arrow function calcular() mantendo o comportamento do exercício anterior.
+export const calculadora = (a, b, operacao) => {
+  switch (operacao) {
+    case "Somar": somar(a,b) 
+    break;
+    case "Subtração": subtrair(a,b)
+    break;
+    case "Multiplicação":multiplicar(a,b)
+    break;
+    case "Divisão":dividir(a,b)
+    break;
+    default: console.log("Nenhuma operação valida selecionada")
+    break;
+  }
+}

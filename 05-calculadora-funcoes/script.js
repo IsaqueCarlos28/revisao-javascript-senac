@@ -3,27 +3,44 @@
 */
 
 function somar(a, b) {
-  // TODO
+  return console.log(`${a} + ${b} = ${a + b}`)
 }
 
 function subtrair(a, b) {
-  // TODO
+  return console.log(`${a} - ${b} = ${a - b}`)
 }
 
 function multiplicar(a, b) {
-  // TODO
+  return console.log(`${a} * ${b} = ${a * b}`)
 }
 
 function dividir(a, b) {
-  // TODO:
-  // Trate divisão por zero.
+  if(a === 0 || b === 0){
+    return console.log("Não é possivel realizar divisão por zero")
+  }
+  return console.log(`${a} % ${b} = ${a % b}`)
 }
 
-function calcular(a, b, operacao) {
-  // TODO:
-  // Escolha a função correta conforme a operação.
-  // Trate também uma operação desconhecida.
-}
+export function calcular(a, b, operacao) {
+  switch (operacao) {
+    case "Somar":
+      somar(a,b)
+    break;
+    
+    case "Subtração":
+      subtrair(a,b)
+    break;
 
-// TODO:
-// Faça alguns testes com calcular().
+    case "Multiplicação":
+      multiplicar(a,b)
+    break;
+
+    case "Divisão":
+      dividir(a,b)
+    break;
+  
+    default:
+      console.log("Nenhuma operação valida selecionada")
+      break;
+  }
+}
